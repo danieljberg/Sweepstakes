@@ -33,7 +33,8 @@ namespace Sweepstakes
             random = new Random();
             int randomNumber = random.Next(contestantsDictionary.Count + 1);
             contestantsDictionary.TryGetValue(randomNumber, out result);
-            return result.firstName + ;
+            string winner = result.firstName + " " + result.lastName;
+            return winner;
         }
         public void PrintContestantInfo(Contestant contestant)
         {

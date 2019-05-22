@@ -10,7 +10,10 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-            string test = null;
+            string selection = UserInterface.GetSweepstakesManager();
+            ManagerFactory factory = new ManagerFactory();
+            ISweepstakesManager manager= factory.GenerateSweepstakesManager(selection);
+
             Sweepstakes s = new Sweepstakes(test);
             Contestant a = new Contestant();
             Contestant b = new Contestant();
@@ -24,8 +27,8 @@ namespace Sweepstakes
             s.RegisterContestant(d);
             s.RegisterContestant(e);
             s.RegisterContestant(f);
-            Contestant contestant = s.PickWinner();
-            s.PrintContestantInfo(contestant);
+            string winner = s.PickWinner();
+            Console.WriteLine(winner);
             Console.ReadLine();
 
 

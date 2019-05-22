@@ -9,12 +9,13 @@ namespace Sweepstakes
     class MarketingFirm
     {
         //member variables
+        ISweepstakesManager manager;
 
 
         //constructor
         public MarketingFirm(ISweepstakesManager sweepstakesManager)
         {
-            UserInterface.GetSweepstakesManager();
+            manager = sweepstakesManager;
         }
         //member methods
         
