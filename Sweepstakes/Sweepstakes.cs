@@ -9,20 +9,37 @@ namespace Sweepstakes
     class Sweepstakes
     {
         //member variables
-
+        string name;        
+        Random random;
+        Dictionary<int, Contestant> contestantsDictionary;
 
         //constructor
-
+        public Sweepstakes(string name)
+        {
+            this.name = name;
+            contestantsDictionary = new Dictionary<int, Contestant>();
+        }
 
         //member methods
-        Sweepstakes(string name)
-        {
 
+        public void RegisterContestant(Contestant contestant)
+        {            
+            contestant.registrationNumber = contestantsDictionary.Count + 1;
+            contestantsDictionary.Add(contestant.registrationNumber, contestant);
         }
-        void RegisterContestant(Contestant contestant)
+        public string PickWinner()
         {
-
+            Contestant result;
+            random = new Random();
+            int randomNumber = random.Next(contestantsDictionary.Count + 1);
+            contestantsDictionary.TryGetValue(randomNumber, out result);
+            return result.firstName + ;
         }
-
+        public void PrintContestantInfo(Contestant contestant)
+        {
+            Console.WriteLine(contestant.firstName);
+            Console.WriteLine(contestant.lastName);
+            Console.WriteLine(contestant.email);
+        }
     }
 }

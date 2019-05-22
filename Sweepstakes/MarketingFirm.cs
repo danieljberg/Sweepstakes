@@ -12,8 +12,13 @@ namespace Sweepstakes
 
 
         //constructor
-
-
+        public MarketingFirm(ISweepstakesManager sweepstakesManager)
+        {
+            UserInterface.GetSweepstakesManager();
+        }
         //member methods
+        
+
+        
     }
 }
